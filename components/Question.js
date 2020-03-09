@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor:'#F48023',
         margin:2,
-        height:'10%'
+        height:45
     },
     questionContainer : {
         alignSelf : "center",
