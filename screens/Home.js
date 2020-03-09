@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {View, StyleSheet, TextInput, ScrollView, Button, Alert, ImageBackground} from 'react-native'
+import {View, StyleSheet, Text, TextInput, ScrollView, Button, Alert, ImageBackground} from 'react-native'
 import {getQuestionFromApi} from '../Utils'
 import TitleBar from '../components/TitleBar'
 import { useDispatch } from 'react-redux'
@@ -26,7 +26,7 @@ const Home = () => {
     }
 
     handleButtonPress = () => {
-        updateScramblerLength(scramblerLength + 1)
+        updateScramblerLength(scramblerLength + 1);
         let currentQuestion = store.getState().scrambler;
         if(currentQuestion.length != 0){
             let actualWord = currentQuestion.actual_word.replace(/\s+/g,'');
@@ -57,38 +57,38 @@ const Home = () => {
         }
     }
 
-    // if(scramblerLength == 0){
-    //     return(
-    //         <React.Fragment>
-    //             <View>
-    //                 <TitleBar/>
-    //                 <ImageBackground source={{uri : "https://lh3.googleusercontent.com/GrStlGYLfoz_3t7U-JcVIuteifHTVCyMPROmTpKrU-IHPWjwJX-4aQThI6CiRz3iw8Vi"}} style={styles.titleBarImage}>
-    //                 </ImageBackground>
-    //             </View>
-    //             <Button title="PLAY" style = {styles.playButton} onPress={handleButtonPress} />
-    //         </React.Fragment>
-    //     )
-    // }
+    if(scramblerLength == 0){
+        return(
+            <React.Fragment>
+                <View>
+                    <TitleBar/>
+                    <ImageBackground source={{uri : "https://lh3.googleusercontent.com/GrStlGYLfoz_3t7U-JcVIuteifHTVCyMPROmTpKrU-IHPWjwJX-4aQThI6CiRz3iw8Vi"}} style={styles.titleBarImage}>
+                    </ImageBackground>
+                </View>
+                <Button title="PLAY" style = {styles.playButton} onPress={handleButtonPress} />
+            </React.Fragment>
+        )
+    }
+
 
     return (
-        <ScrollView style = {styles.container}>
+        <View style={styles.container}>
             <TitleBar/>
             <Question/>
-            <View style={styles.textBox}>            
-            <TextInput placeholder='Answer' style={{padding:20}} onChangeText={changeAnswerText} value={answerText} />
-            </View> 
+            <View style = {styles.textBox}>
+                <TextInput placeholder='Answer' style={{padding:20}} onChangeText={changeAnswerText} value={answerText} />
+            </View>
             <Button title="SUBMIT" onPress={handleButtonPress} />
             <View>
                 <Button color="#D9195F" title = "END GAME" onPress={endGame}/>
-            </View> 
-        </ScrollView>
+            </View>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
     container : {
         flex : 1,
-        flexDirection : "row"
     },
     textBox : {
         margin : 10,
