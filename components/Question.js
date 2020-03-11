@@ -7,8 +7,6 @@ const Question = () => {
     const getCurrentQuestion = () => {
         let result = useSelector(state => state);
         if(result.scrambler.length != 0){
-        console.log(result)
-        console.log(result.scrambler.split_scrambled_word)
         return result.scrambler.split_scrambled_word;
         }
         else{
@@ -39,12 +37,12 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor:'#F48023',
         margin:2,
-        height:'10%'
+        height:40,
     },
     questionContainer : {
         alignSelf : "center",
         marginBottom : 50,
-        marginTop : 50
+        marginTop : 20
     }
 })
 export default Question;

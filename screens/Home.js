@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {View, StyleSheet, Text, TextInput, ScrollView, Button, Alert, ImageBackground} from 'react-native'
+import {View, StyleSheet, Text, TextInput, ScrollView, Button, Alert, ImageBackground, Keyboard, KeyboardAvoidingView} from 'react-native'
 import {getQuestionFromApi} from '../Utils'
 import TitleBar from '../components/TitleBar'
 import { useDispatch } from 'react-redux'
@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
         flex : 1,
     },
     textBox : {
-        margin : 10,
         backgroundColor : '#e4e4e4',
         borderRadius: 5,
         marginBottom : 20
