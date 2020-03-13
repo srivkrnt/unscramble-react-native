@@ -28,4 +28,8 @@ android { <br />
 - cd android
 - ./gradlew assembleRelease
  <br />
+ 
+ To perform a clean build <br/>
+ cd android
+./gradlew clean && ./gradlew assembleRelease
 As a result, the APK creation process is done. You can find the generated APK at android/app/build/outputs/apk/app-release.apk. This is the actual app, which you can send to your phone or upload to the Google Play Store.
