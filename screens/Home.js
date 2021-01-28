@@ -9,8 +9,7 @@ import store from '../Store'
 const Home = () => {
 
     const [answerText, setAnswerText] = useState('');
-    const [scramblerLength, setScramblerLength] = useState(0)
-    const a = 1;
+    const [scramblerLength, setScramblerLength] = useState(0);
 
     const dispatch = useDispatch()
 
