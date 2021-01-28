@@ -1,7 +1,6 @@
 name: 'Artifact Cleanup'
 on:
   workflow_dispatch:
-
 jobs:
   delete-artifacts:
     runs-on: ubuntu-latest
